@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.principal {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 10px;
+    align-items: center;
+}
+
+
+.agenda {
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 80%;
+}
+
+.section {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 0;
+    margin: 10px;
+    padding: 10px;
+    align-content: center;
+    width: 60%;
+}
+
+blue {
+    color: blue;
+}
+
+.form-section {
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+body {
+    background:#FA8072;
+}
+
+label {
+    flex: 1 0;
+    max-width: 100px;
+    color:blue;
+    font-weight: bold;
+}
+
+
+td, th {
+    text-align: center;
+}
+
+input[type=text]{
+    width: 300px;
+}
+
+input{
+    border-style: none;
+    border-radius: 5px;
+    margin: 5px;
+    height: 25px;
+}
+
+.error {
+    color: white;
+    margin-left: 10px;
+}
+
+.submit {
+    height: 30px;
+    padding: 5px;
+}
+
+.blue {
+    color: blue;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.error {
+    flex: 0 0 200px; /* Tamaño fijo para la etiqueta */
+    color: red;
+    font-size: 1em;
+    margin-left: 10px;
+    visibility: hidden; /* Oculto por defecto */
+}
+
+.error-visible {
+    visibility: visible;
+}
+
+a.button {
+    width: 100px;
+    margin: 10px;
+    padding: 5px 10px;
+    background-color: white;   /* Fondo blanco */
+    color: red;                /* Letras rojas */
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
