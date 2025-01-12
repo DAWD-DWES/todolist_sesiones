@@ -18,7 +18,7 @@ if (filter_has_var(INPUT_POST, 'crear_tarea')) { // Si se solicita la creación 
 } else if (filter_has_var(INPUT_POST, 'completar_tarea')) { // Si se solicita que se complete una tarea
     $tareaId = filter_input(INPUT_POST, 'tarea_id', FILTER_VALIDATE_INT); // Se lee el número de tarea (uno más que el índice real)          
     $tareas[$tareaId - 1]['estado'] = true; // Se cambia el estado de completado de la tarea
-} else if (filter_input(INPUT_GET, 'limpiar_tareas')) {
+} else if (filter_has_var(INPUT_GET, 'limpiar_tareas') || filter_has_var(INPUT_POST, 'limpiar_tareas')) {
     $tareas = [];
 }
 
@@ -79,10 +79,11 @@ $_SESSION['tareas'] = $tareas;
                             <input id="tarea" type="number" min="1" max=<?= count($tareas) ?> value="1" name="tarea_id">
                             <input class="submit blue" type="submit" value="Tarea Completada" name='completar_tarea'/>
                             <input class="submit blue" type="submit" value="Tarea Borrada" name='borrar_tarea'/>
+                            <input class="submit red" type="submit" value="Vaciar Agenda" name="limpiar_tareas">
+                            <!-- Otras maneras de enviar la petición al servidor 
                             <input class="submit red" type="submit" formaction="<?= "{$_SERVER['PHP_SELF']}?limpiar_tareas" ?>"  value="Vaciar Agenda">
-                            <!-- Otra manera de enviar la petición al servidor con un mensaje GET-->   
-                            <!-- Esta forma no requiere que el botón sea de tipo submit -->
-                            <!-- <a href="<?= "{$_SERVER['PHP_SELF']}?limpiar_tareas" ?>"><input type="button" class="submit red" value="Vaciar Agenda"></a> -->                     
+                            <a href="<?= "{$_SERVER['PHP_SELF']}?limpiar_tareas" ?>"><input type="button" class="submit red" value="Vaciar Agenda"></a>
+                            <a class="submit red button" href="<?= "{$_SERVER['PHP_SELF']}?limpiar_tareas" ?>">Vaciar Agenda</a> -->
                         </div> 
                     </fieldset>
                 <?php else: ?>
